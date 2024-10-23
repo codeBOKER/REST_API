@@ -1,0 +1,31 @@
+{% extends 'accounts_base_html.html' %}
+{% load static %}
+{% block title %}
+  <title>LOGIN</title>
+{% endblock %}
+{% block body %}
+  <section class="container">
+    <div class="login-container">
+      <div class="circle circle-one"></div>
+      <div class="form-container">
+        <img src="{% static 'img\illustration.png' %}" alt="illustration" class="illustration" />
+        <h1 class="opacity">LOGIN</h1>
+
+        <form method="post" action="{% url 'login' %}">
+          {% csrf_token %}
+          <input type="text" name="username" placeholder="USERNAME" />
+          <input type="password" name="password" placeholder="PASSWORD" />
+          <button class="opacity">SUBMIT</button>
+        </form>
+        {% if form.errors %}
+          <p>{{ form.error_messages.inactive }}</p>
+        {% endif %}
+        <div class="register-forget opacity">
+          <a href="{% url 'signup' %}">SIGNUP</a>
+          <a href="{% url 'password_reset' %}">FORGOT PASSWORD</a>
+        </div>
+      </div>
+      <div class="circle circle-two"></div>
+    </div>
+  </section>
+{% endblock %}

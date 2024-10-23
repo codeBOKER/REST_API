@@ -1,0 +1,5 @@
+# virtaul envirment
+venv/
+
+# envirment and secret vars
+.env

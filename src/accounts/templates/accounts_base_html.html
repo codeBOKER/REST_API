@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    {% block title %}
+
+    {% endblock %}
+    <link rel="stylesheet" href="{% static 'css\style.css' %}" />
+  </head>
+  <body>
+    {% block body %}
+
+    {% endblock %}
+    <div class="theme-btn-container"></div>
+    <script src="{% static 'js\script.js' %}"></script>
+  </body>
+</html>
